@@ -9,9 +9,9 @@ class ShippingController {
   async getItemShipping(item) {
     var shippingAmount = await productService.getProductWeight(item.id)
     if (item.type.toLowerCase() === 'overnight') {
-      return shippingAmount * this.OVERNIGHT_PRICE
+      return shippingAmount * this.OVERNIGHT_PRICE * 5
     } else {
-      return shippingAmount * this.REGULAR_PRICE
+      return shippingAmount * this.REGULAR_PRICE * 5
     }
   }
 }
